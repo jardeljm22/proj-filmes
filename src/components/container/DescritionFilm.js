@@ -7,17 +7,12 @@ import DSeries from '../pasta/DescSeries';
 import Filme from '../pasta/DescFilmes';
 
 const DescritionFilm = ()=>{
-    
-
-
     const {id,tipo}= useParams();
     const [dadosFilme,setDadosFilme] = useState();
     const urlImage = 'https://image.tmdb.org/t/p/original';
     const [imdb,setimdb]=useState('');
     const key = '3370043fbaa049df00d006e8129805cf';
     const [Erro,seterro]= useState(false)
-
-
     useEffect(()=>{
         console.log('id ;',id,tipo)
         Api.get(`/${tipo}/${id}?api_key=${key}&language=pt-br`).then((dados)=>{
@@ -26,26 +21,18 @@ const DescritionFilm = ()=>{
             setDadosFilme(dados.data);
             setimdb(dados.data.imdb_id);
 
-        
         }).catch((error)=>{
             seterro(!Erro);
         })
         // require para pegar o id do tmdb para poder enviar iframe do warezcdn
-        
          },[]);
 
-
-
-
     return (
-        <>
-            
+        <>   
             <div style={dadosFilme&&{marginTop:'-20px',padding:'10px',backgroundImage:`url(https://image.tmdb.org/t/p/original/${dadosFilme.backdrop_path})`}} >
-
                 {dadosFilme?
                     tipo==='movie'?
                         <Filme imdb={imdb} urlImage={urlImage} dados={dadosFilme} />
-                        
                         :
                         <div >
                             <div>
