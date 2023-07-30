@@ -6,8 +6,6 @@ const DFilmes = ({imdb,urlImage,dados})=>{
 
    // const [dados_filme,setDadosFilme ]= useState();
     const [assistir,setAssistir] = useState(false);
-    
-
     const Clicou = ()=>{
         setAssistir(!assistir)
         console.log(assistir)
@@ -16,11 +14,8 @@ const DFilmes = ({imdb,urlImage,dados})=>{
     useEffect (() =>{
         console.log('filme dados filme',dados)
     },[]);
-
     return(
-       
         <div className='desc-princ' id='esc-princ' >
-
         <div className={`iframe ${assistir?'visivel' : ''}`}  >
                 <button className='button' onClick={Clicou} >fechar</button>
                 {
@@ -28,7 +23,6 @@ const DFilmes = ({imdb,urlImage,dados})=>{
                 }
             </div>
         <article className='containerD'>
-            
             <div className='contD' >
                 <p className='title-description center' >{dados.title}</p>
                 <br/>
