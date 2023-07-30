@@ -11,7 +11,7 @@ const DSeries = (serie,Image,click) =>{
                     <br/>
                     <br></br>
                     <p className='ano'><span>{serie.release_date.substring(0,4)}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{serie.runtime}&nbsp;minutos </span></p>
-                    <br></br>
+                    <br ></br>
                     <div className='genero'>
                         {serie.genres.map(id1=>{
                             if (id1.name ==='Ação'){
