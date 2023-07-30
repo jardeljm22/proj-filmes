@@ -8,6 +8,7 @@ import DescritionFilm from "../container/DescritionFilm";
 import Series from '../pasta/Series';
 import Procura from "../pasta/procurar";
 import FS from '../container/Filme';
+
 //import Filmes from '../pasta/filmes'
 
 const Routers =()=>{
