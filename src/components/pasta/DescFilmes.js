@@ -3,15 +3,33 @@ import  '../../Style/DescritionFilm.css';
 import { useState } from 'react';
 
 const DFilmes = ({imdb,urlImage,dados})=>{
+<<<<<<< HEAD
+=======
+   // const [dados_filme,setDadosFilme ]= useState();
+>>>>>>> 76d7f4ee98ef5df05daaf097f8eb8d1fa4d2d321
     const [assistir,setAssistir] = useState(false);
     const Clicou = ()=>{
         setAssistir(!assistir)
         console.log(assistir)
         console.log('clicou')
         }
+<<<<<<< HEAD
 
     return( 
         <div className='desc-princ' id='esc-princ' >
+=======
+    useEffect (() =>{
+        console.log('filme dados filme',dados)
+    },[]);
+    return(
+        <div className='desc-princ' id='esc-princ' >
+        <div className={`iframe ${assistir?'visivel' : ''}`}  >
+                <button className='button' onClick={Clicou} >fechar</button>
+                {
+                    assistir&&<iframe src={`https://embed.warezcdn.com/filme/${imdb}`} width="90%"  height='800'  allowFullScreen={true} scrolling="no" frameBorder="0"></iframe>
+                }
+            </div>
+>>>>>>> 76d7f4ee98ef5df05daaf097f8eb8d1fa4d2d321
         <article className='containerD'>
             <div className='contD' >
                 <p className='title-description center' >{dados.title}</p>

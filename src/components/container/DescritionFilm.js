@@ -12,10 +12,15 @@ const DescritionFilm = ()=>{
     const urlImage = 'https://image.tmdb.org/t/p/original';
     const [imdb,setimdb]=useState('');
     const key = '3370043fbaa049df00d006e8129805cf';
+<<<<<<< HEAD
+=======
+    const [Erro,seterro]= useState(false)
+>>>>>>> 76d7f4ee98ef5df05daaf097f8eb8d1fa4d2d321
     useEffect(()=>{
         Api.get(`/${tipo}/${id}?api_key=${key}&language=pt-br`).then((dados)=>{
             setDadosFilme(dados.data);
             setimdb(dados.data.imdb_id);
+<<<<<<< HEAD
         })
     },[]);
 
@@ -26,6 +31,22 @@ const DescritionFilm = ()=>{
                     tipo==='movie'?
                         <Filme imdb={imdb} urlImage={urlImage} dados={dadosFilme} />
                     :
+=======
+
+        }).catch((error)=>{
+            seterro(!Erro);
+        })
+        // require para pegar o id do tmdb para poder enviar iframe do warezcdn
+         },[]);
+
+    return (
+        <>   
+            <div style={dadosFilme&&{marginTop:'-20px',padding:'10px',backgroundImage:`url(https://image.tmdb.org/t/p/original/${dadosFilme.backdrop_path})`}} >
+                {dadosFilme?
+                    tipo==='movie'?
+                        <Filme imdb={imdb} urlImage={urlImage} dados={dadosFilme} />
+                        :
+>>>>>>> 76d7f4ee98ef5df05daaf097f8eb8d1fa4d2d321
                         <div >
                             <div>
                                 <button className='button'  >fechar</button>
