@@ -12,6 +12,8 @@ const DescritionFilm = ()=>{
     const urlImage = 'https://image.tmdb.org/t/p/original';
     const [imdb,setimdb]=useState('');
     const key = '3370043fbaa049df00d006e8129805cf';
+
+    const [Erro,seterro]= useState(false)
     useEffect(()=>{
         Api.get(`/${tipo}/${id}?api_key=${key}&language=pt-br`).then((dados)=>{
             setDadosFilme(dados.data);
@@ -20,12 +22,12 @@ const DescritionFilm = ()=>{
     },[]);
 
     return (
-        <>
-            <div style={dadosFilme&&{marginTop:'-20px',padding:'10px',height:'100%',width:'100%',backgroundImage:`url(https://image.tmdb.org/t/p/original/${dadosFilme.backdrop_path})`}} >
+        <>   
+            <div style={dadosFilme&&{marginTop:'-20px',padding:'10px',backgroundImage:`url(https://image.tmdb.org/t/p/original/${dadosFilme.backdrop_path})`}} >
                 {dadosFilme?
                     tipo==='movie'?
                         <Filme imdb={imdb} urlImage={urlImage} dados={dadosFilme} />
-                    :
+                        :
                         <div >
                             <div>
                                 <button className='button'  >fechar</button>

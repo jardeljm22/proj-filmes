@@ -12,7 +12,7 @@ const Init = () =>{
     return (
       <div className="containerS">
         <InTheaters  url='movie/now_playing' text="Filmes Recentes" tipo='movie' link="descrition"/>
-        <InTheaters  url='tv/top_rated' text="Melhores Séries" tipo='tv' link="" />
+        <InTheaters  url='tv/top_rated' text="Melhores Séries" tipo='tv'/>
         <Filme className="cont-filmes"  />
       </div>
     )
