@@ -64,6 +64,7 @@
     background-color: rgba(103, 17, 103, 0.41);
     border: none;
     border-radius: 50%;
+    margin-left: 6px;
     cursor: pointer;
     box-shadow:0 0 3px rgba(255, 255, 0, 0.478),
                0 0 10px rgba(255, 255, 0, 0.478),

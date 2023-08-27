@@ -8,14 +8,14 @@ const InTheaters=({url,text,link,tipo})=>{
   const key = '3370043fbaa049df00d006e8129805cf';
   const [filmes,SetFilmes] = useState([]);
   const urlImage = 'https://image.tmdb.org/t/p/original';
-  const [alt,setalt] = useState([]);
+  //const [alt,setalt] = useState([]);
   useEffect(()=>{
 
       Api.get(`${url}?api_key=${key}&language=pt-br`).then(({data})=>{
-        setalt(data.results)
+        SetFilmes(data.results)
         }
       )  
-      if(alt){
+      /*if(alt){
         alt.sort(function(a,b){
           if(a.release_date){
             return b.release_date.substring(0,4) - a.release_date.substring(0,4);
@@ -24,19 +24,15 @@ const InTheaters=({url,text,link,tipo})=>{
            }
         })
         SetFilmes(alt);
-     } 
+     } */
      
-   },[url,alt]);
+   },[url]);
 
     return (
       <div className="cont-fimPop">
         <div className='title-cont-int'>
-          <Link to={`${link}/${tipo}/${tipo}`} >
-            <strong>{text}</strong>
-          </Link>
-          
+          <Link className="title" to={`${link}/${tipo}/${tipo}`}  >{text} </Link>
         </div>
-        
         <div className="container-filmePop">
               {tipo==='movie'?filmes?.map((filme)=>{
                 return(

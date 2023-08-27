@@ -2,15 +2,13 @@ import '../../Style/Header.css';
 import {Link,useNavigate} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 
-const Header =()=>{
-
+const Header = () => {
     const navigate = useNavigate();// useNavigate para trabalhar chamar as rotas
     const {register,handleSubmit,reset} = useForm();//useForm hook para trabalhar com formularios no react
-
     const pegar=(e)=>{
         console.log(e.nome)
         navigate(`/procura/${e.nome}`);
-        reset();
+        reset()
     }
     return(
         <div>
@@ -35,8 +33,6 @@ const Header =()=>{
                 </nav>                   
             </header>
         </div>
-        
-
     )
 }
 export default Header;
