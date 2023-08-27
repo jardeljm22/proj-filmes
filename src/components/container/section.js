@@ -8,19 +8,20 @@ import { useParams,Link } from "react-router-dom";
 
 const Section=()=>{
 
-const key = 'k_t10igpqo';
+const key = '3370043fbaa049df00d006e8129805cf';
 const linSearh = "search";
-const {id1,id2} = useParams();
+
 const [fil,SetFil] = useState([]);
 
 useEffect(()=>{ 
-  //let nome  = `${id}`;
 
-  Api.get(`${linSearh}/${id1}?api_key=${key}&query=${id2}`).then(({data})=>{
+
+  Api.get(`movie/now_playing?api_key=3370043fbaa049df00d006e8129805cf&language=pt-br`).then(({data})=>{
     SetFil(data.results);
     console.log(data.results);
+    console.log('section ativo')
   });
-    },[id1,id2]);
+    },[]);
 
   return (
       <div className="containerS">
