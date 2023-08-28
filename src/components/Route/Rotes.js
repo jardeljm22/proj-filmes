@@ -29,6 +29,7 @@ const Routers =()=>{
                 <Route path="header" element={<Header/>} />
                 <Route path="section" element={<Section/>} />
                 <Route path="descrition/:id/:tipo" element={<DescritionFilm/>} />
+                <Route path="exibir/descrition/:id/:tipo" element={<DescritionFilm/>} />
                 <Route path="procura/:id/descrition/:id/:tipo" element={<DescritionFilm/>} />
                 <Route path="procura/:id" element={<Procura/>} />
                 <Route path="*" element={<h1>rota nao enconrada</h1>} />
