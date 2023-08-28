@@ -1,4 +1,3 @@
-import useEffect from 'react'
 import  '../../Style/DescritionFilm.css';
 import { useState } from 'react';
 
@@ -9,21 +8,14 @@ const DFilmes = ({imdb,urlImage,dados})=>{
         console.log(assistir)
         console.log('clicou')
         }
-    useEffect (() =>{
-        console.log('filme dados filme',dados)
-    },[]);
-    return(
+
+    return( 
         <div className='desc-princ' id='esc-princ' >
-            <div className={`iframe ${assistir?'visivel' : ''}`}  >
-                <button className='button' onClick={Clicou} >fechar</button>
-                {
-                    assistir&&<iframe src={`https://embed.warezcdn.com/filme/${imdb}`} width="90%"  height='800'  allowFullScreen={true} scrolling="no" frameBorder="0"></iframe>
-                }
-            </div>
-            <article className='containerD'>
-                <div className='contD' >
-                    <p className='title-description center' >{dados.title}</p>
-                    <br/>
+        <article className='containerD'>
+            <div className='contD' >
+                <p className='title-description center' >{dados.title}</p>
+                <br/>
+                <br></br>
                     <br></br>
                     <p className='ano'><span>{dados.release_date.substring(0,4)}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{dados.runtime}&nbsp;minutos </span></p>
                     <br></br>
