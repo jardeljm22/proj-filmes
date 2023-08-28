@@ -17,7 +17,8 @@ const Header = () => {
             <header className='header'>
                 <Link to='/' >
                     <h1 className='logo' >
-                        Pirataflix
+                    Cineverse
+                    
                     </h1>
                 </Link>
                 <form className='pesquisar' onSubmit={handleSubmit(pegar)} >
