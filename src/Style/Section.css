@@ -62,7 +62,7 @@
 
 @media(max-width:520px){
     .containerS{
-        width: 450px;
+        width: 430px;
     } 
     .section{
         display: flex;

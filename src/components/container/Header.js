@@ -12,8 +12,6 @@ const Header = () => {
     }
     return(
         <div>
-            <svg className='sidebar'> 
-            </svg>
             <header className='header'>
                 <Link to='/' >
                     <h1 className='logo' >

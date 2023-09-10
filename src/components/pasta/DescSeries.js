@@ -48,7 +48,11 @@ const DSeries = (serie,click) =>{
                         <strong>resumo </strong>
                         <br></br>
                         <p className='desc color' >{dados.overview}</p>
-                    </div>                          
+                    </div> 
+                    <div>
+                        <h3>temporadas</h3>
+                        
+                    </div>
                 </div>
                 <div>
                     <img className='img' onClick={click} alt="" src={`${urlImage}${dados.poster_path}`} />
