@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 import "../../Style/InTheaters.css";
 import { Link } from "react-router-dom";
 
-const InTheaters=({url,text,link,tipo})=>{
+const InTheaters=({url,text,link,route,tipo})=>{
   const key = '3370043fbaa049df00d006e8129805cf';
   const [filmes,SetFilmes] = useState([]);
   const urlImage = 'https://image.tmdb.org/t/p/original';
@@ -20,7 +20,7 @@ const InTheaters=({url,text,link,tipo})=>{
     return (
       <div className="cont-fimPop">
         <div className='title-cont-int'>
-          <Link className="title" to={`${link}/${tipo}/${tipo}`}  >{text} </Link>
+          <Link className="title" to={`/${route}`}  >{text} </Link>
         </div>
         <div className="container-filmePop">
               {tipo==='movie'?filmes?.map((filme)=>{
