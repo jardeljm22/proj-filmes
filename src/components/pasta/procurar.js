@@ -21,8 +21,7 @@ const Procura =()=>{
 
   useEffect(()=>{
       recebe();
-      console.log( );
-      },[pagina,id]);
+      },[recebe]);
 
   const mudaPagina = ()=>{
     setPagina(pagina+1)

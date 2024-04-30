@@ -225,7 +225,19 @@ h3{
     width: 100vw;
     height: 100vh;
 
-  }
+}
+.info-temps{
+    display: flex;
+    flex-direction: column;
+
+}
+.TotalTemporadas{
+    display: flex;
+    flex-direction: row;
+}
+.colort strong{
+    color: #E3E3E3;
+}
 
 @media(max-width : 1370px){
     .containerD{

@@ -6,7 +6,6 @@ const DFilmes = ({imdb,urlImage,dados})=>{
     const Clicou = ()=>{
         setAssistir(!assistir)
         console.log(assistir)
-        console.log('clicou')
         }
 
     return( 
@@ -24,7 +23,7 @@ const DFilmes = ({imdb,urlImage,dados})=>{
                             if (id1.name ==='Ação'){
                                 return <p className='gen' key={id1.id}>-&nbsp;Ação&nbsp;</p>
                             }else if(id1.name ==='Thriller'){
-                            return ;
+                                return <p></p>
                             }else{
                                 return <p className='gen' key={id1.id}>-&nbsp; {id1.name}&nbsp;</p>
                             }
@@ -56,9 +55,9 @@ const DFilmes = ({imdb,urlImage,dados})=>{
                 </div>
             </article>
             <div className={`iframe ${assistir&&'visivel'}`}  >
-                <button className='button' onClick={Clicou} >fechar</button>
+                <button className='button' onClick={Clicou} >Fechar</button>
                 {
-                    assistir&&<iframe src={`https://embed.warezcdn.com/filme/${imdb}`} width="90%"  height='800'  allowFullScreen={true} scrolling="no" frameBorder="0"></iframe>
+                    assistir&&<iframe src={`https://superflixapi.top/filme/${imdb}`} width="90%" title={`${imdb}`}  height='800'  allowFullScreen={true} scrolling="no" frameBorder="0"></iframe>
                 }
             </div>
         </div>

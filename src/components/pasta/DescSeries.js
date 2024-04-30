@@ -4,23 +4,27 @@ import { useState,useEffect } from 'react';
 import Api from '../api';
 
 
-const DSeries = (serie,click) =>{
+const DSeries = () =>{
 
     const {id} = useParams();
     const [dados,setDados] = useState()
     const urlImage = 'https://image.tmdb.org/t/p/original';
-
+    const [numTemporada,setNumTemporada] = useState(0);
+    const [numEpsodios,setnumEpsodios] = useState(0)
     useEffect(()=>{
         Api.get(`tv/${id}?api_key=3370043fbaa049df00d006e8129805cf&language=pt-br`).then(dadosS=>{
             setDados(dadosS.data);
-            console.log('serie',dadosS.data);
+            setNumTemporada(dadosS.data.number_of_seasons)
+            setnumEpsodios(dadosS.data.number_of_episodes);
+            console.log(numEpsodios,numTemporada)
         })
     },[]);
     /* */
 
     return(
         <div>
-            {dados&&<article className='containerD'>
+            <h1 className='ano'> fora de ar no momento.</h1>
+            {/**{dados&&<article className='containerD'>
                 <div className='contD' >
                     <p className='title-description center' >{dados.name}</p>
                     <br/>
@@ -49,15 +53,25 @@ const DSeries = (serie,click) =>{
                         <br></br>
                         <p className='desc color' >{dados.overview}</p>
                     </div> 
-                    <div>
-                        <h3>temporadas</h3>
-                        
+                    <div className='info-temps'>
+                        <div className='TotalTemporadas  colort'>
+                            <strong>total de temporadas <p> {numTemporada} </p> </strong>
+                        </div>
+                        <div className='TotalTemporadas colort' >
+                            <strong> total de epsoódios <p> {numEpsodios} </p> </strong>
+                        </div>
+                        <div>
+                            
+                                <br></br>
+                                
+                            
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <img className='img' onClick={click} alt="" src={`${urlImage}${dados.poster_path}`} />
+                    <img className='img'  alt="" src={`${urlImage}${dados.poster_path}`} />
                 </div>
-            </article>}
+            </article>}*/}
         </div>
     )
 }
