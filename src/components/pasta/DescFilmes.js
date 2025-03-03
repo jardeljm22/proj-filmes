@@ -10,11 +10,11 @@ const DFilmes = ({imdb,urlImage,dados})=>{
 
     return( 
         <div className='desc-princ' id='esc-princ' >
-        <article className='containerD'>
-            <div className='contD' >
-                <p className='title-description center' >{dados.title}</p>
-                <br/>
-                <br></br>
+            <section className='containerD'>
+                <div className='contD' >
+                    <p className='title-description center' >{dados.title}</p>
+                    <br/>
+                    <br></br>
                     <br></br>
                     <p className='ano'><span>{dados.release_date.substring(0,4)}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{dados.runtime}&nbsp;minutos </span></p>
                     <br></br>
@@ -53,11 +53,11 @@ const DFilmes = ({imdb,urlImage,dados})=>{
                     </svg>
                     <img className='img'  alt="" src={`${urlImage}${dados.poster_path}`} />
                 </div>
-            </article>
+            </section>
             <div className={`iframe ${assistir&&'visivel'}`}  >
                 <button className='button' onClick={Clicou} >Fechar</button>
                 {
-                    assistir&&<iframe src={`https://superflixapi.top/filme/${imdb}`} width="90%" title={`${imdb}`}  height='800'  allowFullScreen={true} scrolling="no" frameBorder="0"></iframe>
+                    assistir&&<iframe src={`https://superembeds.com/embed2/${imdb}`} width="90%" title={`${imdb}`}  height='800'  allowFullScreen={true} scrolling="no" frameBorder="0"></iframe>
                 }
             </div>
         </div>

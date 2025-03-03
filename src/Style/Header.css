@@ -6,6 +6,31 @@
     display: none;
 }
 
+.menu{
+    display: flex;
+    position: absolute;
+    
+    top: 30px;
+    width: 90%;
+    height: 80%;
+    background-color: rgb(30, 30, 37);
+    border: 1px 1px 1px beige;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;   
+}
+.menuOf{
+    display: none;
+}
+.svgClose{
+    width: 55px;
+    height: 50px;
+    background-color: brown;
+    color: aqua;
+   position: absolute;
+   top:0px;
+   right: 0px;
+}
 .logo{
     padding: 5px 15px ;
     font-size: 23pt;
@@ -14,12 +39,12 @@
     color: rgb(21, 183, 195);
     background-color: rgba(40, 211, 17, 0.2) ;
     box-sizing: border-box;
-    box-shadow: 1px 1px 10px rgba(255, 255, 0, 0.478),
-                1px 1px 20px rgba(255, 255, 0, 0.478),
-                1px 1px 30px rgba(255, 255, 0, 0.478)
-    ;
+    box-shadow: 1px 1px 10px rgba(255, 255, 0, 0.478),                1px 1px 20px rgba(255, 255, 0, 0.478),                1px 1px 30px rgba(255, 255, 0, 0.478)    ;
     text-decoration: none;
-
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
 }
 .header{
     width: 100%;
@@ -98,11 +123,13 @@
     display: flex;
     padding: 5px;
     border-bottom: 1px soid gray;
-    width: 300px;
+    width: 500px;
     justify-content: space-around;
     font-family: sans-serif;
 }
-
+.botMenu{
+    cursor: pointer;
+}
 .side-bar svg{
     width: 50px;
     height: 50px;
@@ -110,6 +137,14 @@
 }
 .link{
     font-size: 16pt;
+    box-shadow: border-box;
+    color: rgb(60, 194, 194);
+    text-decoration: none;
+    text-shadow: 2px 2px 2px green;
+
+}
+.link2{
+    font-size: 4rem;
     box-shadow: border-box;
     color: rgb(60, 194, 194);
     text-decoration: none;

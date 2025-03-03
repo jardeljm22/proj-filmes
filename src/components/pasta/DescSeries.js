@@ -11,20 +11,22 @@ const DSeries = () =>{
     const urlImage = 'https://image.tmdb.org/t/p/original';
     const [numTemporada,setNumTemporada] = useState(0);
     const [numEpsodios,setnumEpsodios] = useState(0)
+    const [seasons,setseasons] = useState([]);
     useEffect(()=>{
         Api.get(`tv/${id}?api_key=3370043fbaa049df00d006e8129805cf&language=pt-br`).then(dadosS=>{
             setDados(dadosS.data);
-            setNumTemporada(dadosS.data.number_of_seasons)
+            setNumTemporada(dadosS.data.number_of_seasons);
             setnumEpsodios(dadosS.data.number_of_episodes);
-            console.log(numEpsodios,numTemporada)
+            setseasons(dadosS.data.seasons)
+            console.log(numEpsodios,numTemporada,seasons)
         })
     },[]);
     /* */
 
     return(
         <div>
-            <h1 className='ano'> fora de ar no momento.</h1>
-            {/**{dados&&<article className='containerD'>
+            {/**<h1 className='ano'> fora de ar no momento.</h1>**/}
+            {dados&&<section className='containerD'>
                 <div className='contD' >
                     <p className='title-description center' >{dados.name}</p>
                     <br/>
@@ -54,16 +56,30 @@ const DSeries = () =>{
                         <p className='desc color' >{dados.overview}</p>
                     </div> 
                     <div className='info-temps'>
+                        <hr/>
                         <div className='TotalTemporadas  colort'>
-                            <strong>total de temporadas <p> {numTemporada} </p> </strong>
+                            <strong>total de temporadas : </strong><p className='colort'> {numTemporada} </p>
+                            <br></br>
                         </div>
                         <div className='TotalTemporadas colort' >
-                            <strong> total de epsoódios <p> {numEpsodios} </p> </strong>
+                            <strong> total de epsoódios  :</strong><p className='strong' > {numEpsodios} </p>
                         </div>
                         <div>
-                            
-                                <br></br>
-                                
+                            <hr/>
+                            <br></br>
+                            {seasons?.map((num)=>{
+                                <div>
+                                    <h1>temporada {num}</h1>
+                                    <label for='epsodio' >epsoódios</label>
+                                    <select id='epsodio' name='epsodios' >
+                                        {seasons[num].episode_count.map((ep)=>{
+                                        <option>{ep}</option>
+                                        })}
+                                    </select>
+                                </div>    
+                            })}
+
+                               
                             
                         </div>
                     </div>
@@ -71,7 +87,7 @@ const DSeries = () =>{
                 <div>
                     <img className='img'  alt="" src={`${urlImage}${dados.poster_path}`} />
                 </div>
-            </article>}*/}
+            </section>}
         </div>
     )
 }

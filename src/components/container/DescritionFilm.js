@@ -31,7 +31,7 @@ const DescritionFilm = ()=>{
                             <div>
                                 <button className='button'  >fechar</button>
                                 {
-                                    <iframe src={`https://superflixapi.top/filme/${dadosFilme.imdb_id}`} width="90%" title={`${dadosFilme.imdb_id}`} height='800'  allowFullScreen={true} scrolling="no" frameBorder="0"></iframe>
+                                    <iframe src={`https://superflixapi.link/filme/${dadosFilme.imdb_id}`} width="90%" title={`${dadosFilme.imdb_id}`} height='800'  allowFullScreen={true} scrolling="no" frameBorder="0"></iframe>
                                 }
                             </div>
                             <DSeries serie={dadosFilme} Image={urlImage}  ></DSeries>

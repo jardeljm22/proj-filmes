@@ -150,6 +150,8 @@ h3{
     -moz-transition: 3s;
     -ms-transition: 3s;
     -o-transition: 3s;
+    background-color: blue;
+
 }
 
 .img{
@@ -233,11 +235,14 @@ h3{
 }
 .TotalTemporadas{
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    margin-top: 30px;
+    justify-content: flex-end;    
 }
-.colort strong{
+.colort {
     color: #E3E3E3;
 }
+
 
 @media(max-width : 1370px){
     .containerD{
